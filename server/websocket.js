@@ -3,6 +3,12 @@
 const Primus = require('primus');
 const http = require('http');
 
+const transformers = {
+  WEBSOCKETS: 'websockets',
+  ENGINEIO: 'engine.io', 
+  SOCKJS: 'sockjs'
+};
+
 class WebsocketServer {
   constructor(app, port) {
     this.onConnection = this.onConnection.bind(this);
@@ -10,8 +16,7 @@ class WebsocketServer {
 
     const server = http.createServer(app);
     this.primus = new Primus(server, {
-      transformer: 'websockets',
-      maxLength: 100000,
+      transformer: transformers.SOCKJS,
       pathname: '/primus'
     });
 
