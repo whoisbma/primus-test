@@ -17,7 +17,8 @@ class WebsocketServer {
     const server = http.createServer(app);
     this.primus = new Primus(server, {
       transformer: transformers.WEBSOCKETS,
-      pathname: '/'
+      pathname: '/',
+      pingInterval: false
     });
 
     this.primus.on('connection', this.onConnection);

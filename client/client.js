@@ -17,7 +17,9 @@ primus.on('open', function(spark) {
 });
 
 primus.on('data', function(data) {
-  console.log(data);
+  // console.log(data);
+  var output = document.getElementById("output");
+  output.innerHTML += '<div><p>'+data+'</p></div>';
   primus.write("client got message");
 });
 
