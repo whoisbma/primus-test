@@ -20,7 +20,7 @@ primus.on('data', function(data) {
   // console.log(data);
   var output = document.getElementById("output");
   output.innerHTML += '<div><p>'+data+'</p></div>';
-  primus.write("client got message");
+  primus.write("hello from client");
 });
 
 primus.on('disconnect', function(data) {

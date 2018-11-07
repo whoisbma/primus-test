@@ -52,8 +52,7 @@ class WebsocketServer {
   }
 
   onData(spark, data) {
-    console.log("server got data");
-    console.log(data);
+    console.log("server got data:", data);
   }
 
 }

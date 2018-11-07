@@ -16,5 +16,5 @@ app.listen(8080, function() {
 });
 
 setInterval(function() {
-  websocketServer.primus.write("message from server");
+  websocketServer.primus.write("hello from server");
 }, 3000);
